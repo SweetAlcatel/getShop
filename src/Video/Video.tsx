@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player';
 import './Video.css';
 
 interface VideoProps {
-    setState: (progress: number) => void
+    setState: (prop: boolean) => void
 };
 
 export const Video = ({ setState }: VideoProps) => {
@@ -16,12 +16,12 @@ export const Video = ({ setState }: VideoProps) => {
             muted={true}
             loop={true}
             playing={true}
+            onStart={() => setTimeout(() => setState(true), 5000)}
             config={{
                 youtube: {
                     playerVars: { showinfo: 0, autoplay: 1, controls: 0, disablekb: 1 }
                 }
             }}
-            onProgress={(progress) => {setState(progress.playedSeconds)}}
             />
         </div>
     );

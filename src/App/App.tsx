@@ -5,21 +5,14 @@ import { Banner } from '../Banner/Banner';
 
 export const App = () => {
 
-    const [seconds, setSeconds] = useState(0);
+    const [isShow, setShow] = useState(false);
 
-    if(seconds >= 5) {
-        return (
-            <main>
-                <Video setState={setSeconds}/>
-                <Banner />
-            </main>
-        );
-
-    };
+    console.log(isShow);
 
     return (
         <main>
-            <Video setState={setSeconds}/>
+            <Video setState={setShow}/>
+            {isShow && <Banner />}
         </main>
     );
 
