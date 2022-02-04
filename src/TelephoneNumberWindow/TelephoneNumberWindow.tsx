@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
+import NumberFormat from 'react-number-format';
 import './TelephoneNumberWindow.css';
 
 export const TelephoneNumberWindow = () => {
@@ -8,12 +9,12 @@ export const TelephoneNumberWindow = () => {
     return (
         <div className='container-telephone'>
             <h2>Введите ваш номер телефона</h2>
-            <input />
+            <NumberFormat format="+7 (###) ###-####" allowEmptyFormatting mask="_"/>
             <span>и с Вами свяжется наш менеждер для дальнейшей консультации</span>
             <ul>
                 {
                     numbers.map((number: number) => {
-                        return <li><button>{number}</button></li>
+                        return <li key={number}><button>{number}</button></li>
                     })
                 }
             </ul>
