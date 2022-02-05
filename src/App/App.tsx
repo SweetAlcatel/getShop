@@ -14,7 +14,7 @@ export const App = () => {
         <main>
             <Video setState={setShow}/>
             {isShow && <Banner setClick={setClick}/>}
-            {isClicked && <TelephoneNumberWindow />}
+            {isClicked && <TelephoneNumberWindow setClick={setClick}/>}
         </main>
     );
 
