@@ -24,3 +24,43 @@ ul {
 li { 
     list-style: none;
 }
+
+.reset {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background-color: white;
+    width: 52px;
+    height: 52px;
+    z-index: 1000;
+    opacity: 0.3;
+}
+
+.reset {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.reset:hover {
+    opacity: 1;
+}
+
+.reset:before, .reset:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+}
+
+.reset:before {
+    transform: rotate(45deg);
+}
+
+.reset:after {
+    transform: rotate(-45deg);
+}
